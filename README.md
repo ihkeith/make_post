@@ -1,6 +1,8 @@
-## Background
+# A Markdown Blog Post Creator in Python
 
-One of the main points of this blog is to serve as an aid to learning Python and to log what I've been doing. I created this script as a way to jumpstart my posts.
+## Overview
+
+The purpose of this code is to make creating a stub post file for easier editing later. I wanted it to be command-line to force myself to use command-line editors more. make_post.py will prompt you for a Title and Summary and fill in the date for you as well as creating other metadata for use in Markdown and the Pelican Static Site Generator.
 
 ## The Code
 
@@ -8,54 +10,24 @@ I threw this one together in between cooking and chasing a screaming toddler aro
 
 The code is straight forward. Variables hold on the various strings that will make up metadata with a couple of inputs from the user rounding it out.  The user provides the title, which is then used to generate the slug and the file name. A datetime creates the date.  All of this gets put in a list and a for loop writes it to the .md file.
 
-```Python
-import os
-from datetime import datetime
-
-def makePost():
-	title = "Title: " + input("What is the title of your post? \n"
-	        ">>> ")
-
-	date = "Date: " + datetime.today().strftime("%Y-%m-%d")
-
-	category = "Category: "
-
-	tags = "Tags: "
-
-	slug = "Slug: " + title[7:].lower().strip().replace(' ', '-')
-
-	summary = "Summary: " + input("What is the summary?\n"
-	       ">>> ")
-
-	author = "Author: Ian H Keith"
-
-	boilerplate = [title, date, category, tags, author, slug, summary]
-
-	post = '/home/ian/Documents/Projects/Pelican_Blog/content/{}.md'.format(slug[6:])
-
-	with open(post, 'w', newline='\r\n') as w:
-	    for item in boilerplate:
-	        w.write(item + '\n')
-
-makePost()
-```
-
 ## Running the code
-	:::bash
-	$ python makePost.py
-	What is the title of your post?
-	>>> Test Post
-	What is the summary?
-	>>> This is a Test Post
-	$ 
+
+```bash
+$ python makePost.py
+What is the title of your post?
+>>> Test Post
+What is the summary?
+>>> This is a Test Post
+$
+```
 
 ## The Output
 
 ```markdown
 Title: Test Post
 Date: 2017-12-17
-Category: 
-Tags: 
+Category:
+Tags:
 Author: Ian H Keith
 Slug: test-post
 Summary: This is a Test Post
@@ -67,4 +39,4 @@ And here is my post stub. I can then go and fill out the rest: Category, Tags, a
 
 * I'm sure a lot of this can be simplified and cut down to reduce verbosity.
 * Refactor to take a commandline argument for the Title and optionally for the Summary
-* Objects. Objects. Objects
+* Objects

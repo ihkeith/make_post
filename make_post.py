@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-def makePost():
+def make_post():
 	title = "Title: " + input("What is the title of your post? \n"
 	        ">>> ")
 
@@ -20,7 +20,7 @@ def makePost():
 
 	boilerplate = [title, date, category, tags, author, slug, summary]
 
-	post = '/home/iankeith/Documents/Projects/Pelican_Blog/content/{}.md'.format(slug[6:])
+	post = '/Users/ian/Documents/Projects/pelican_blog/content/{}.md'.format(slug[6:])
 
 	with open(post, 'w', newline='\r\n') as w:
 	    for item in boilerplate:
@@ -29,5 +29,5 @@ def makePost():
 	print("Successfully created file: {}".format(post))
 
 
-makePost()
+make_post()
 
