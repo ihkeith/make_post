@@ -10,16 +10,28 @@ Clone the repo to your main Pelican folder or create a make_post.py file and cop
 
 ```bash
 $ python3 make_post.py
-What is the title of your post?
->>> Test Post
+```
+
+```python
+***************************************
+Markdown Post Creator Command Line Tool
+***************************************
+
+
+Press enter to continue.
+
+
+
+What is the title of your post? 
+>>>  Test Post
 What is the summary?
->>> This is a Test Post
-What Catagory/s would you like to use?
->>> Python, Blogging
-What Tag/s would you like to use?
->>> Programming, Python
+>>>  This is a Test Post
+What Category/s would you like to use? (Separate with a comma)
+>>>  Python, Markdown
+What Tag/s would you like to use? (Separate with a comma)
+>>>  Programming, Pelican, Markdown, Python
 Successfully created file Test Post
-$
+Would you like to create another post? Y/n  
 ```
 
 ## The Output
