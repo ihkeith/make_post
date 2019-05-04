@@ -2,22 +2,23 @@
 
 ## Overview
 
-The purpose of this code is to make creating a stub post file for easier editing later. I wanted it to be command-line to force myself to use command-line editors more. make_post.py will prompt you for a Title and Summary and fill in the date for you as well as creating other metadata for use in Markdown and the Pelican Static Site Generator.
+The Markdown Post creator is a command line program written in Python. It will prompt you to input your post Title, Summary, Categor, and Tags. It will then format a markdown template for Pelican blogs with metadata, slug, current date, and author. It will create a `.md` file in your content directory.
 
-## The Code
+## Usage
 
-I threw this one together in between cooking and chasing a screaming toddler around the house. It ain't pretty, but it gets the job done. I put it in a function, but it really doesn't need to be at this point. It will help when I get around to refactor it.
-
-The code is straight forward. Variables hold on the various strings that will make up metadata with a couple of inputs from the user rounding it out.  The user provides the title, which is then used to generate the slug and the file name. A datetime creates the date.  All of this gets put in a list and a for loop writes it to the .md file.
-
-## Running the code
+Clone the repo to your main Pelican folder or create a make_post.py file and copy the code. Run the code by typing `python3 make_post.py`. See example below.
 
 ```bash
-$ python makePost.py
+$ python3 make_post.py
 What is the title of your post?
 >>> Test Post
 What is the summary?
 >>> This is a Test Post
+What Catagory/s would you like to use?
+>>> Python, Blogging
+What Tag/s would you like to use?
+>>> Programming, Python
+Successfully created file Test Post
 $
 ```
 
@@ -25,18 +26,11 @@ $
 
 ```markdown
 Title: Test Post
-Date: 2017-12-17
-Category:
-Tags:
+Date: 2019-05-03
+Category: Python, Blogging
+Tags: Programming, Python
 Author: Ian H Keith
 Slug: test-post
 Summary: This is a Test Post
 ```
 
-And here is my post stub. I can then go and fill out the rest: Category, Tags, and the post itself.
-
-## Improvements for the Future
-
-* I'm sure a lot of this can be simplified and cut down to reduce verbosity.
-* Refactor to take a commandline argument for the Title and optionally for the Summary
-* Objects
