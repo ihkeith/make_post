@@ -22,9 +22,40 @@ class Post:
 		print("Successfully created file: {}".format(self.title))
 
 
+def clear_screen():
+	os.system("cls" if os.name == "nt" else "clear")
+
+
+def menu():
+	welcome = "Markdown Post Creator Command Line Tool"
+	print("*" * len(welcome))
+	print(welcome)
+	print("*" * len(welcome))
+	input("\n\nPress enter to continue.")
+
+
 def main():
-		post = Post()
-		post.make_post()
+	clear_screen()
+	menu()
+	print("\n\n")
+	post = Post()
+	post.make_post()
+	while True:
+		another_post = input("Would you like to create another post? Y/n  ")
+		if another_post.lower()  == 'y':
+			clear_screen()
+			menu()
+			print("\n\n")
+			post = Post()
+			post.make_post()
+			continue
+		elif another_post.lower() == 'n':
+			print("Thank you. Have a great day {}".format(post.author))
+			break
+		else:
+			print("That is not a valid option. Please try again.")
+			continue
+		
 
 if __name__ == "__main__":
 	main()
