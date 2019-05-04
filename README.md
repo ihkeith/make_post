@@ -6,7 +6,7 @@ The Markdown Post creator is a command line program written in Python. It will p
 
 ## Usage
 
-Clone the repo to your main Pelican folder or create a make_post.py file and copy the code. Run the code by typing `python3 make_post.py`. See example below.
+Clone the repo to your main Pelican folder or create a make_post.py file and copy the code. Move the _make_post.py_ file to the root of your Pelican folder or update the file variable to reflect the path to your content folder. Run the code by typing `python3 make_post.py` wherever the file is located. See example below.
 
 ```bash
 $ python3 make_post.py
